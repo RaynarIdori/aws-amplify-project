@@ -303,7 +303,6 @@ Ce projet est sous licence MIT. Voir le fichier [LICENSE](LICENSE) pour plus de 
 
 Pour toute question ou support :
 
-- 📧 **Email** : [contact@example.com](mailto:contact@example.com)
 - 🐛 **Issues** : [GitHub Issues](https://github.com/RaynarIdori/aws-amplify-project/issues)
 - 📚 **Documentation AWS** : [AWS Amplify Docs](https://docs.amplify.aws/)
 
