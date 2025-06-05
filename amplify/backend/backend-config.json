@@ -1,0 +1,232 @@
+{
+  "api": {
+    "usersRyan": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "saveUserRyan"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "cryptoRyan"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "signeDataRyan"
+        },
+        {
+          "attributes": [
+            "Name",
+            "Arn"
+          ],
+          "category": "function",
+          "resourceName": "getUsersRyan"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "ryanawse2c93951": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "cryptoRyan": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "cryptoPricesRyan"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "getUsersRyan": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "users"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "saveUserRyan": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "users"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "signeDataRyan": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "Name",
+            "Arn",
+            "StreamArn"
+          ],
+          "category": "storage",
+          "resourceName": "cryptoPricesRyan"
+        },
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "cryptoExportBucketRyan"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_cryptoRyan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cryptoRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_cryptoRyan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "cryptoRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUsersRyan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUsersRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_getUsersRyan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "getUsersRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_saveUserRyan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveUserRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_saveUserRyan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "saveUserRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_signeDataRyan_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signeDataRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_signeDataRyan_s3BucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signeDataRyan"
+        }
+      ]
+    },
+    "AMPLIFY_function_signeDataRyan_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "signeDataRyan"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "cryptoExportBucketRyan": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3"
+    },
+    "cryptoPricesRyan": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    },
+    "users": {
+      "providerPlugin": "awscloudformation",
+      "service": "DynamoDB"
+    }
+  }
+}

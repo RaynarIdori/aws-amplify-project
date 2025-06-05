@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "paths": {
+    "/saveUsersRyan": {
+      "name": "/saveUsersRyan",
+      "lambdaFunction": "saveUserRyan",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/cryptos": {
+      "name": "/cryptos",
+      "lambdaFunction": "cryptoRyan",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/export": {
+      "name": "/export",
+      "lambdaFunction": "signeDataRyan",
+      "permissions": {
+        "setting": "open"
+      }
+    },
+    "/getUsers": {
+      "name": "/getUsers",
+      "lambdaFunction": "getUsersRyan",
+      "permissions": {
+        "setting": "open"
+      }
+    }
+  }
+}

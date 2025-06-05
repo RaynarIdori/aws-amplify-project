@@ -1,0 +1,13 @@
+{
+  "resourceName": "cryptoExportBucketRyan",
+  "policyUUID": "26c1c87e",
+  "bucketName": "ryanawsb92b69ae7d62437b86e9b13f73c3e8f3",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ"
+  ],
+  "triggerFunction": "NONE",
+  "groupAccess": {}
+}

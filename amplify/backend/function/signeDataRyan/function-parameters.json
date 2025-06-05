@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "storage": {
+      "cryptoPricesRyan": [
+        "create",
+        "read",
+        "update"
+      ],
+      "cryptoExportBucketRyan": [
+        "create",
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "s3BucketName",
+      "environmentVariableName": "S3_BUCKET_NAME"
+    }
+  ]
+}
